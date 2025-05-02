@@ -25,7 +25,10 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('post.create', [
+            'categories'=> $categories
+        ]);
     }
 
     /**
@@ -33,7 +36,19 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title'=> 'required',
+            'content'=> 'required',
+            'image' => [
+                'required',
+                'image',
+                'mimes:jpeg,png,jpg,gif,svg'
+            ],
+            'category_id' => [
+                'required',
+                'exists:categories,id'
+            ]
+        ]);
     }
 
     /**
