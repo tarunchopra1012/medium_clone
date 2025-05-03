@@ -12,6 +12,7 @@ class Post extends Model
 
     protected $guarded = [];
 
+    // Post belongs to a user that is many to one relationship.
     public function user()
     {
         return $this->belongsTo(User::class);
