@@ -1,1 +1,1 @@
-<img src="/medium.png" class="h-24" alt=""
+<img src="/medium.png" class="h-16" alt=""
